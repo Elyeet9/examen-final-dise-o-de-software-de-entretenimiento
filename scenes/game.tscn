@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://4q1xr4sboivx"]
+
+[ext_resource type="Texture2D" uid="uid://bbtn42nul2in5" path="res://assets/fondos/game.png" id="1_ggquf"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_hk7dl"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_68aul"]
+[ext_resource type="Texture2D" uid="uid://bu0h62x5v0d0i" path="res://assets/player.png" id="4_viulw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pcesj"]
+radius = 26.0
+height = 94.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_nb7ia"]
+font_size = 28
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_hk7dl")
+
+[node name="bgGame" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+scale = Vector2(1.875, 1.875)
+texture = ExtResource("1_ggquf")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(400, 300)
+script = ExtResource("2_68aul")
+
+[node name="spritePlayer" type="Sprite2D" parent="Player"]
+texture = ExtResource("4_viulw")
+
+[node name="collisionPlayer" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_pcesj")
+
+[node name="lblHealth" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 14.0
+offset_right = 114.0
+offset_bottom = 53.0
+text = "HP: 3"
+label_settings = SubResource("LabelSettings_nb7ia")

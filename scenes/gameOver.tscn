@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgj2at6sx6sl7"]
+
+[ext_resource type="Texture2D" uid="uid://fampc80ov004" path="res://assets/fondos/gam-over.jpg" id="1_3gg33"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kix7v"]
+font_size = 64
+
+[node name="GameOver" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+texture = ExtResource("1_3gg33")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 165.0
+offset_top = 7.0
+offset_right = 636.0
+offset_bottom = 95.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_kix7v")
+horizontal_alignment = 1
+vertical_alignment = 1

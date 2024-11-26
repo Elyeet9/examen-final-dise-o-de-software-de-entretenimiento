@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://4q1xr4sboivx"]
+
+[ext_resource type="Texture2D" uid="uid://bbtn42nul2in5" path="res://assets/fondos/game.png" id="1_ggquf"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_68aul"]
+[ext_resource type="Texture2D" uid="uid://dcdcfsruavv2u" path="res://assets/verde.png" id="3_i2cmf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pcesj"]
+radius = 26.0
+height = 94.0
+
+[node name="Game" type="Node2D"]
+
+[node name="bgGame" type="Sprite2D" parent="."]
+scale = Vector2(1.875, 1.875)
+texture = ExtResource("1_ggquf")
+centered = false
+offset = Vector2(-98.14, 0)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_68aul")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_i2cmf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_pcesj")
